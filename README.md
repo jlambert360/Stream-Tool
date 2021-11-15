@@ -51,15 +51,35 @@ The interface will also update basic text files with the match info at `Resource
 
 ---
 
-## Customizing stuff
+## Customization Guide
+- Written by KingJigglypuff
 
-Note: unfortunately, the source code is not available to download. 
+### Character Images
+- Character images go inside "Resources/Characters" and their respective cosmetics are split between 4 folders. CSS (CSS Icons), Cutted (BPs), Renders (CSPs), and Stock Icons (STCs).
 
-You can still customize how your Scoreboard and VS screen look by replacing the files in the overlay folder.
+- The BPs, CSPs, and STCs are all copy + paste (copy the HD cosmetics, and put them in said folders after making a folder for your character in each of the 3 folders). Though you'll have to rename them after editing your character's json file (we'll get to that further down this guide).
 
-While to change the position of the icons and writings you should modify parts of the code contained in the `html` and `js` files.
+- For the CSS image, you"ll need to do a bit of editing. You need to take the HD CSS Icon, flip it horizontally, flip it by -90 degrees (clockwise), then resize it to fit on the included template texture ("Resources/Characters/CSS/Template.png").
 
-And most importantly, this project was created using [RoA-Stream-Tool](https://github.com/Readek/RoA-Stream-Tool) as a base, so if you wanna go crazy on customizations, I really recomend you to check out that first, since it's way more documented (and also has a wiki!), especially if you wanna adapt this to other games. This Project+ version is way more locked down.
+### Character .json Configuration
+- Go to "Resources/Texts/Character" Info and make a json file for your character (you can just take an existing one and rename it, but you'll have to edit it to specify the character and their cosmetics). For quick reference, the costumes are usually named by character, followed by their costume. Ex: Ridley(1)
+
+- After that, go to "Resources/Texts", and open InterfaceInfo.json. Edit in your character name based on where you want them on the CSS.
+
+### Editing the Source
+- Go to "Interface Source Code/src" and edit gui.js. Go to line 359 and edit the range. By default it fits 43 - 45, so adding one character would increase that to 43 - 46 (IE: Ridley). The more characters you add, the more you'll need to edit. You may even get up to the point where you'll have to add another row. If it gets to that point, you should be able to just copy the coding for a new line, paste it below, and edit it to be a unique line.
+
+### Compiling the Source
+- After you're done editing the source, compile the program by following the steps below:
+
+- Install Node.js https://nodejs.org/en/
+
+- Use Node.js to install yarn and electron-builder by opening the command prompt and entering "npm install --global yarn" and then "npm install --global electron-builder".
+
+- Afterwards, go to the folder with package.json in it (by default, this would just be "Interface Source Code"), open the command prompt in there (alternatively, you can just input "cd" followed by the directory), and enter "yarn dist". After it runs through, it'll create a "dist" folder. Go there, and you'll see the compiled exe. Either copy or move this exe and replace the original.
+
+
+And most importantly, this project was created using [RoA-Stream-Tool](https://github.com/Readek/RoA-Stream-Tool) as a base, so if you wanna go crazy on customizations, I really recomend you to check out that first, since it's way more documented (and also has a wiki!), especially if you wanna adapt this to other games.
 
 ---
 
