@@ -165,6 +165,9 @@ function init() {
 
     Mousetrap.bind('f1', () => { giveWinP1() });
     Mousetrap.bind('f2', () => { giveWinP2() });
+
+    Mousetrap.bind('shift+f1', () => { takeWinP1() });
+    Mousetrap.bind('shift+f2', () => { takeWinP2() });
 }
 
 
@@ -543,6 +546,27 @@ function giveWinP2() {
     }
 }
 
+//takes a victory from player 1 
+function takeWinP1() {
+    if (p1Win2.checked && p1Win3.checked) {
+        p1Win3.checked = false;
+    } else if (p1Win1.checked && p1Win2.checked) {
+        p1Win2.checked = false;
+    } else if (!p1Win2.checked) {
+        p1Win1.checked = false;
+    }
+}
+
+//same with P2
+function takeWinP2() {
+    if (p2Win2.checked && p2Win3.checked) {
+        p2Win3.checked = false;
+    } else if (p2Win1.checked && p2Win2.checked) {
+        p2Win2.checked = false;
+    } else if (!p2Win2.checked) {
+        p2Win1.checked = false;
+    }
+}
 
 function setWLP1() {
     if (this == p1W) {
