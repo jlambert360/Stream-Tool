@@ -71,8 +71,8 @@ function init() {
 
 
     //set initial values for the character selectors
-    document.getElementById('p1CharSelector').setAttribute('src', charPath + '/CSS/Random.png');
-    document.getElementById('p2CharSelector').setAttribute('src', charPath + '/CSS/Random.png');
+    document.getElementById('p1CharSelector').setAttribute('src', charPath + '/CSS/Select.png');
+    document.getElementById('p2CharSelector').setAttribute('src', charPath + '/CSS/Select.png');
     //if clicking them, show the character roster
     document.getElementById('p1CharSelector').addEventListener("click", openChars);
     document.getElementById('p2CharSelector').addEventListener("click", openChars);
@@ -124,7 +124,7 @@ function init() {
     document.getElementById("bo5Div").addEventListener("click", changeBestOf);
     //set initial value
     document.getElementById("bo3Div").style.color = "var(--text2)";
-    document.getElementById("bo5Div").style.backgroundImage = "linear-gradient(to top, #0e3131, #0e3131)";
+    document.getElementById("bo5Div").style.backgroundImage = "linear-gradient(to top, #575757, #00000000)";
 
 
     //check if the round is grand finals
@@ -233,16 +233,16 @@ function loadColors(pNum) {
 
     //set the initial colors for the interface (the first color for p1, and the second for p2)
     if (pNum == 1) {
-        document.getElementById("player1").style.backgroundImage = "linear-gradient(to bottom left, "+colorList.colorSlots["color"+0].hex+"50, #00000000, #00000000)";
-        document.getElementById("p1ColorRect").style.backgroundColor = colorList.colorSlots["color"+0].hex;
+        document.getElementById("player1").style.backgroundImage = "linear-gradient(to bottom left, "+colorList.colorSlots["color"+5].hex+"50, #00000000, #00000000)";
+        document.getElementById("p1ColorRect").style.backgroundColor = colorList.colorSlots["color"+5].hex;
     } else {
-        document.getElementById("player2").style.backgroundImage = "linear-gradient(to bottom left, "+colorList.colorSlots["color"+1].hex+"50, #00000000, #00000000)";
-        document.getElementById("p2ColorRect").style.backgroundColor = colorList.colorSlots["color"+1].hex;
+        document.getElementById("player2").style.backgroundImage = "linear-gradient(to bottom left, "+colorList.colorSlots["color"+5].hex+"50, #00000000, #00000000)";
+        document.getElementById("p2ColorRect").style.backgroundColor = colorList.colorSlots["color"+5].hex;
     }
 
     //finally, set initial values for the global color variables
-    colorP1 = "Red";
-    colorP2 = "Blue";
+    colorP1 = "White";
+    colorP2 = "White";
 }
 
 function updateColor() {
@@ -274,7 +274,7 @@ function updateColor() {
 
             //then change both the color rectangle and the background gradient
             colorRectangle.style.backgroundColor = colorList.colorSlots["color"+i].hex;
-            colorGrad.style.backgroundImage = "linear-gradient(to bottom left, "+colorList.colorSlots["color"+i].hex+"80, #0e3131, #0e3131)";
+            colorGrad.style.backgroundImage = "linear-gradient(to bottom left, "+colorList.colorSlots["color"+i].hex+"80, #00000000, #00000000)";
         
            
 
@@ -549,13 +549,13 @@ function setWLP1() {
         currentP1WL = "W";
         this.style.color = "var(--text1)";
         p1L.style.color = "var(--text2)";
-        this.style.backgroundImage = "linear-gradient(to top, #0e3131, #0e3131)";
+        this.style.backgroundImage = "linear-gradient(to top, #575757, #00000000)";
         p1L.style.backgroundImage = "var(--bg4)";
     } else {
         currentP1WL = "L";
         this.style.color = "var(--text1)";
         p1W.style.color = "var(--text2)";
-        this.style.backgroundImage = "linear-gradient(to top, #0e3131, #0e3131)";
+        this.style.backgroundImage = "linear-gradient(to top, #575757, #00000000)";
         p1W.style.backgroundImage = "var(--bg4)";
     }
 }
@@ -564,13 +564,13 @@ function setWLP2() {
         currentP2WL = "W";
         this.style.color = "var(--text1)";
         p2L.style.color = "var(--text2)";
-        this.style.backgroundImage = "linear-gradient(to top, #0e3131, #0e3131)";
+        this.style.backgroundImage = "linear-gradient(to top, #575757, #00000000)";
         p2L.style.backgroundImage = "var(--bg4)";
     } else {
         currentP2WL = "L";
         this.style.color = "var(--text1)";
         p2W.style.color = "var(--text2)";
-        this.style.backgroundImage = "linear-gradient(to top, #0e3131, #0e3131)";
+        this.style.backgroundImage = "linear-gradient(to top, #575757, #00000000)";
         p2W.style.backgroundImage = "var(--bg4)";
     }
 }
@@ -628,7 +628,7 @@ function changeBestOf() {
 
     //change the color and background of the buttons
     this.style.color = "var(--text1)";
-    this.style.backgroundImage = "linear-gradient(to top, #0e3131, #0e3131)";
+    this.style.backgroundImage = "linear-gradient(to top, #575757, #00000000)";
     theOtherBestOf.style.color = "var(--text2)";
     theOtherBestOf.style.backgroundImage = "var(--bg4)";
 }
@@ -701,14 +701,14 @@ function clearPlayers() {
     changeInputWidth(p2NameInp);
 
     //reset characters to random
-    document.getElementById('p1CharSelector').setAttribute('src', charPath + '/CSS/Random.png');
+    document.getElementById('p1CharSelector').setAttribute('src', charPath + '/CSS/Select.png');
     charP1 = "Random";
     skinP1 = "Random";
     charImgChange(charImgP1, charP1);
     document.getElementById('skinListP1').innerHTML = '';
     document.getElementById('skinSelectorP1').style.opacity = 0;
 
-    document.getElementById('p2CharSelector').setAttribute('src', charPath + '/CSS/Random.png');
+    document.getElementById('p2CharSelector').setAttribute('src', charPath + '/CSS/Select.png');
     charP2 = "Random";
     skinP2 = "Random";
     charImgChange(charImgP2, charP2);

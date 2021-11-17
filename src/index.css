@@ -12,19 +12,19 @@
 
 
 :root {
-  --text1: #00ffd9;
-  --text2: #00ffd9;
-  --bg1: #0a2424;
-  --bg2: #134849;
-  --bg3: #0e3131; 
-  --bg4: #1e887ab2;
-  --bg5: #113f3f;
-  --selected: #2db29f;
-  --focused: #00ffd9;
+  --text1: #ececec;
+  --text2: #b6b6b6;
+  --bg1: #131318;
+  --bg2: #383838;
+  --bg3: #1e1e24;
+  --bg4: #444444b6;
+  --bg5: #2b2b2b;
+  --selected: #2ba4eb;
+  --focused: #686868;
 }
 
 ::placeholder {
-  color: #00a58c;
+  color: #b6b6b6;
 }
 
 body {
@@ -361,7 +361,7 @@ input[type="text"] {
 .midIcon {
   height: 12px;
   width: 12px;
-  fill: #00ffd9;
+  fill: #b6b6b6;
   opacity: 0;
   transform: scale(1.5, 1.5);
   transition: opacity 200ms, transform 200ms;
@@ -439,7 +439,7 @@ input[type="text"] {
   width: 20px;
   margin-left: -5px;
   margin-top: 5px;
-  fill: #00ffd9;
+  fill: #b6b6b6;
 }
 
 #twitterIcon {
