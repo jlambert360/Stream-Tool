@@ -468,33 +468,11 @@ function showNothing(itemEL) {
 	itemEL.setAttribute('src', 'Resources/Literally Nothing.png');
 }
 
-
 //score change, pretty simple
 function updateScore(pNum, pScore, pColor) {
 	const score1EL = document.getElementById('win1P'+pNum);
-	const score2EL = document.getElementById('win2P'+pNum);
-	const score3EL = document.getElementById('win3P'+pNum);
-
-
-	if (pScore >= 1) {
-		scoreChange(score1EL, getHexColor(pColor));
-	} else if (score1EL.style.fill != "rgb(65, 65, 65)") {
-		scoreChange(score1EL, "#012d16");
-	}
-	if (pScore >= 2) {
-		scoreChange(score2EL, getHexColor(pColor));
-	} else if (score2EL.style.fill != "rgb(65, 65, 65)") {
-		scoreChange(score2EL, "#012d16");
-	}
-	if (pScore == 3) {
-		scoreChange(score3EL, getHexColor(pColor));
-	} else if (score3EL.style.fill != "rgb(65, 65, 65)") {
-		scoreChange(score3EL, "#012d16");
-	}
-}
-function scoreChange(scoreEL, color) {
-	gsap.to(scoreEL, {fill: "#ffffff", duration: fadeInTime})
-	gsap.to(scoreEL, {delay: fadeInTime, fill: color, duration: fadeInTime})
+	score1EL.style.fontSize = '40px'; //set original text size
+	score1EL.textContent = pScore; //change the actual text
 }
 
 //updates the player's text and portrait background colors
@@ -698,21 +676,11 @@ function initCharaFade(charaID, sagaID, move = pMove) {
 //played when loading the html
 function moveScoresIntro(pNum, bestOf, pWL, move) {
 	const score1EL = document.getElementById('win1P'+pNum);
-	const score2EL = document.getElementById('win2P'+pNum);
-	const score3EL = document.getElementById('win3P'+pNum);
 	const wlEL = document.getElementById('wlP'+pNum);
 
 	gsap.fromTo(score1EL, 
 		{x:-move},
 		{delay: introDelay+.2, x: 0, opacity: 1, ease: "power2.out", duration: fadeInTime});
-	gsap.fromTo(score2EL, 
-		{x:-move},
-		{delay: introDelay+.4, x: 0, opacity: 1, ease: "power2.out", duration: fadeInTime});
-	if (bestOf == "Bo5") {
-		gsap.fromTo(score3EL, 
-			{x:-move},
-			{delay: introDelay+.6, x: 0, opacity: 1, ease: "power2.out", duration: fadeInTime});
-	}
 	if (pWL == "W" || pWL == "L") {
 		gsap.fromTo(wlEL, 
 			{x:-move},
