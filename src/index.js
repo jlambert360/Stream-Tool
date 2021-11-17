@@ -29,6 +29,18 @@ const createWindow = () => {
 
   // load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  
+  // keyboard shortcuts!
+    mainWindow.webContents.on('before-input-event', (event, input) => {
+        if (input.key === 'F5') { // refresh the page
+            createWindow.reload()
+            event.preventDefault()
+        } else if (input.key === 'F6') { // web console
+            mainWindow.webContents.openDevTools()
+            mainWindow.setResizable(true)
+            event.preventDefault()
+        }
+    })
 };
 
 // This method will be called when Electron has finished
