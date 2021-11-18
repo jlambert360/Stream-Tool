@@ -13,9 +13,9 @@ const createWindow = () => {
     height: 300,
     
     minWidth: 600,
-    minHeight: 358,
+    minHeight: 382,
     maxWidth: 600,
-    maxHeight: 358,
+    maxHeight: 382,
 
     webPreferences: {
       nodeIntegration: true,
@@ -33,7 +33,7 @@ const createWindow = () => {
   // keyboard shortcuts!
     mainWindow.webContents.on('before-input-event', (event, input) => {
         if (input.key === 'F5') { // refresh the page
-            createWindow.reload()
+            mainWindow.reload()
             event.preventDefault()
         } else if (input.key === 'F6') { // web console
             mainWindow.webContents.openDevTools()

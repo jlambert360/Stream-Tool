@@ -87,7 +87,7 @@ input[type="text"] {
 /* player stuff */
 #playerRegion {
   display: flex;
-  height: 150px;
+  height: 174px;
 }
 
 .player {
@@ -302,7 +302,7 @@ input[type="text"] {
   margin-left: 12px;
   padding: 3px;
   background-color: var(--bg4);
-  height: 60px;
+  height: 87px;
   box-sizing: border-box;
   border-radius: 3px;
   border: 1px solid var(--bg4);
@@ -598,13 +598,13 @@ input[type="text"] {
   width: calc(100% / 3);
   height: 600px;
   left: calc(100% / 3);
-  top: -148px;
+  top: -136px;
   z-index: 101;
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #0e313193;
+  background-color: #38383893;
   opacity: 0;
   transform: scale(1.2);
   transition: opacity 200ms, transform 200ms;
