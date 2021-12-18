@@ -693,10 +693,18 @@ function moveScoresIntro(pNum, bestOf, pWL, move) {
 //check if winning or losing in a GF, then change image
 function updateWL(pWL, playerNum) {
 	const pWLEL = document.getElementById('wlP' + playerNum + 'Text');
-	if (pWL == "W") {
-		pWLEL.setAttribute('src', 'Resources/Overlay/Scoreboard 16.9/[W].png')
-	} else if (pWL == "L") {
-		pWLEL.setAttribute('src', 'Resources/Overlay/Scoreboard 16.9/[L].png')
+	if (pWL == "W" && playerNum == 1) {
+		pWLEL.style.left = "17px";
+		pWLEL.textContent = "[W]";
+	} else if (pWL == "W" && playerNum == 2) {
+		pWLEL.style.left = "26px";
+		pWLEL.textContent = "[W]";
+	} else if (pWL == "L" && playerNum == 1) {
+		pWLEL.style.left = "20px";
+		pWLEL.textContent = "[L]";
+	} else if (pWL == "L" && playerNum == 2) {
+		pWLEL.style.left = "29px";
+		pWLEL.textContent = "[L]";
 	}
 	if (startup) {pWLEL.addEventListener("error", () => {
 		showNothing(pWLEL)
