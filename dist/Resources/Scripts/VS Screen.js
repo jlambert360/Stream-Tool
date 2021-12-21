@@ -1,4 +1,3 @@
-
 //animation stuff
 const pCharMove = 30; //distance to move for the character images
 
@@ -106,6 +105,8 @@ function getData(scInfo) {
 
 
 		//set the colors
+		updateColorBackground(p1Color, 'backgroundsquare1', p1Color);
+		updateColorBackground(p2Color, 'backgroundsquare2', p2Color);
 		updateColor('p1Slot', p1Color);
 		updateColor('p2Slot', p2Color);
 		p1ColorPrev = p1Color;
@@ -243,6 +244,10 @@ function getData(scInfo) {
 				updateColor('p1Slot', p1Color);
 				fadeIn('#p1Slot');
 			});
+			fadeOutBackground('#backgroundsquare1', () => {
+				updateColorBackground(p1Color, 'backgroundsquare1', p1Color);
+				fadeInBackground('#backgroundsquare1');
+			});
 			p1ColorPrev = p1Color;
 		}
 
@@ -250,6 +255,10 @@ function getData(scInfo) {
 			fadeOut('#p2Slot', () => {
 				updateColor('p2Slot', p2Color);
 				fadeIn('#p2Slot');
+			});
+			fadeOutBackground('#backgroundsquare2', () => {
+				updateColorBackground(p2Color, 'backgroundsquare2', p2Color);
+				fadeInBackground('#backgroundsquare2');
 			});
 			p2ColorPrev = p2Color;
 		}
@@ -335,6 +344,34 @@ function getHexColor(color) {
 			return "#ff0000";
 		case "Player 2":
 			return "#0069ec";
+	}
+}
+
+//updates the player's text and portrait background colors
+function updateColorBackground(colorID, backgroundID, pColor) {
+	const colorEL = document.getElementById(colorID);
+	const backgroundEL = document.getElementById(backgroundID);
+    backgroundEL.style.backgroundColor = getHexColorBackgorund(pColor);
+	gsap.to(colorEL, {backgroundColor: getHexColorBackgorund(pColor), duration: fadeInTime});
+	gsap.to(backgroundEL, {color: getHexColorBackgorund(pColor), duration: fadeInTime});
+}
+//color codes here!
+function getHexColorBackgorund(color) {
+	switch (color) {
+		case "Red":
+			return "#E90004";
+		case "Blue":
+			return "#0A69E7";
+		case "Purple":
+			return "#846AE9";
+		case "Green":
+			return "#0DB321";
+		case "CPU":
+			return "#808080";
+		case "White":
+			return "#FFFFFF";
+		default:
+			return "#FFFFFF";
 	}
 }
 
@@ -489,6 +526,16 @@ function fadeIn(itemID, timeDelay, dur = fadeInTime) {
 	gsap.to(itemID, {delay: timeDelay, opacity: 1, duration: dur});
 }
 
+//fade out
+function fadeOutBackground(itemID, funct = console.log("Hola!"), dur = fadeOutTime) {
+	gsap.to(itemID, {opacity: 0, duration: dur, onComplete: funct});
+}
+
+//fade in
+function fadeInBackground(itemID, timeDelay, dur = fadeInTime) {
+	gsap.to(itemID, {delay: timeDelay, opacity: 1, duration: dur});
+}
+
 //fade out for the characters
 function charaFadeOut(itemID, charMove, funct) {
 	gsap.to(itemID, {delay: .2, x: charMove, opacity: 0, ease: "power1.in", duration: fadeOutTime, onComplete: funct});
@@ -563,12 +610,12 @@ async function updateChar(pCharacter, pSkin, color, charID, direction) {
 	let charPos = [0, 0, 1];
 
 	if (charEL == document.getElementById("charP1")) {
-		charPos[0] = 265;
+		charPos[0] = 274;
 	} else {
-		charPos[0] = 1272;
+		charPos[0] = 1262;
 	}
 	charPos[1] = 510;
-	charPos[2] = 2.375;
+	charPos[2] = 2.575;
 
 
 	//to position the character

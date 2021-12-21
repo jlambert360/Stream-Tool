@@ -175,7 +175,7 @@ async function getData(scInfo) {
 		p1ScorePrev = p1Score;
 
 		//set the color
-		updateColor('p1Color', 'p1Name', p1Color);
+		//updateColor('p1Color', 'p1Name', p1Color);
 		p1ColorPrev = p1Color;
 
 
@@ -197,7 +197,7 @@ async function getData(scInfo) {
 		moveScoresIntro(2, bestOf, p2WL, -sMove);
 		p2ScorePrev = p2Score;
 
-		updateColor('p2Color', 'p2Name', p2Color);
+		//updateColor('p2Color', 'p2Name', p2Color);
 		p2ColorPrev = p2Color;
 
 
@@ -320,7 +320,7 @@ async function getData(scInfo) {
 
 		//change the player's colors
 		if (p1ColorPrev != p1Color) {
-			updateColor('p1Color', 'p1Name', p1Color);
+			//updateColor('p1Color', 'p1Name', p1Color);
 			updateScore(1, p1Score, p1Color);
 			p1ColorPrev = p1Color;
 		}
@@ -371,7 +371,7 @@ async function getData(scInfo) {
 		}
 
 		if (p2ColorPrev != p2Color) {
-			updateColor('p2Color', 'p2Name', p2Color);
+			//updateColor('p2Color', 'p2Name', p2Color);
 			updateScore(2, p2Score, p2Color);
 			p2ColorPrev = p2Color;
 		}

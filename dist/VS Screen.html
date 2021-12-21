@@ -79,13 +79,11 @@
         }
 
         .name {
-            color: #001601;
-            filter: drop-shadow(0px 0px 2px #17ecad);
+            color: #ffffff;
             
         }
         .team {
             color: #ffffff;
-            filter: drop-shadow(0px 0px 0px #002b14);
             
         }
 
@@ -112,8 +110,7 @@
             color: #ffffff;
         }
         .pCharInfo {
-            color: #17ecad;
-            filter: drop-shadow(0px 0px 2px #001601);
+            color: #ffffff;
         }
 
 
@@ -128,8 +125,7 @@
             height: 70px;
             left: 710px;
             top: 125px;
-            color: #001601;
-            filter: drop-shadow(0px 0px 2px #17ecad);
+            color: #ffffff;
             line-height: 38px;
         }
 
@@ -165,15 +161,13 @@
         .casterIcon {
             height: 30px;
             width: 30px;
-            fill: #012d15;
-            filter: drop-shadow(0px 0px 2px #17ecad);
+            fill: #ffffff;
             transform: translate(3px, 2px);
         }
         .casterText {
             font-size: 22px;
             font-family: "Project+";
-            color: #012d15;
-            filter: drop-shadow(0px 0px 2px #17ecad);
+            color: #ffffff;
         }
 
         .casterTwitterBox {
@@ -211,12 +205,40 @@
             filter: drop-shadow(0px 0px 2px #001601);
             
         }
+        .center-fit {
+            width: 1920px;
+            height: 1080px;
+            display: grid;
+            height: 100%;
+			max-width: 150%;
+            max-height: 100vh;
+            margin: auto;
+            z-index: -1
+        }
+        .square2 {
+            position: absolute;
+            left: 960px;
+            height: 1720px;
+            width: 1080px;
+			max-width: 50%;
+            max-height: 100vh;
+            z-index: -2;
+        }
+        .square1 {
+            position: absolute;
+            bottom: 0px;
+            height: 1920px;
+            width: 960px;
+			max-width: 50%;
+            max-height: 100vh;
+            margin: 0px;
+            z-index: -2;
+        }
     </style>
 </head>
 
 <body>
     <div id="bgVids">
-        <video autoplay loop class="absol" src="Resources/Overlay/VS Screen/Background.mp4" ></video>
     </div>
 
     <div id="charas">
@@ -325,6 +347,11 @@
         </div>
 
     </div>
+	
+    <div id="backgroundsquare1" class="square1"></div>
+    <div id="backgroundsquare2" class="square2"></div>
+
+    <img src="Resources/Overlay/VS Screen/black-felt.png" class="center-fit"/>
     
 </body>
 </html>
