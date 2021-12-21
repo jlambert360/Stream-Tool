@@ -98,8 +98,8 @@ async function getData(scInfo) {
 				resizeText(p2IntroEL);
 
 				//change the color of the player text shadows
-				p1IntroEL.style.textShadow = '0px 0px 20px ' + getHexColor(p1Color);
-				p2IntroEL.style.textShadow = '0px 0px 20px ' + getHexColor(p2Color);
+				//p1IntroEL.style.textShadow = '0px 0px 20px ' + getHexColor(p1Color);
+				//p2IntroEL.style.textShadow = '0px 0px 20px ' + getHexColor(p2Color);
 
 				//player 1 name fade in
 				gsap.fromTo("#p1Intro",
