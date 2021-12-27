@@ -484,11 +484,11 @@ function updateColor(colorID, textID, pColor) {
 	gsap.to(textEL, {color: getHexColor(pColor), duration: fadeInTime});
 }
 
-function updateBorder(bestOf) {
+/*function updateBorder(bestOf) {
 	document.getElementById('borderP1').setAttribute('src', 'Resources/Overlay/Scoreboard 16.9/Border ' + bestOf + '.png');
 	document.getElementById('borderP2').setAttribute('src', 'Resources/Overlay/Scoreboard 16.9/Border ' + bestOf + '.png');
 	bestOfPrev = bestOf
-}
+*/}
 
 //team logo change
 function updateTeamLogo(logoID, pTeam) {
