@@ -488,7 +488,7 @@ function updateColor(colorID, textID, pColor) {
 	document.getElementById('borderP1').setAttribute('src', 'Resources/Overlay/Scoreboard 16.9/Border ' + bestOf + '.png');
 	document.getElementById('borderP2').setAttribute('src', 'Resources/Overlay/Scoreboard 16.9/Border ' + bestOf + '.png');
 	bestOfPrev = bestOf
-*/}
+}*/
 
 //team logo change
 function updateTeamLogo(logoID, pTeam) {
